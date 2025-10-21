@@ -8,89 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cosmic color palette - Roxo profundo → Lilás → Azul ciano + Dourado */
+    --background: 263 70% 15%;  /* Roxo profundo escuro */
+    --foreground: 0 0% 100%;    /* Branco puro para texto */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 263 60% 20%;        /* Roxo translúcido para cards */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 263 60% 20%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary = Roxo místico */
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary = Lilás suave */
+    --secondary: 270 60% 70%;
+    --secondary-foreground: 263 70% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted = Roxo translúcido */
+    --muted: 263 40% 30%;
+    --muted-foreground: 0 0% 90%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent = Dourado/Amarelo luminoso */
+    --accent: 45 93% 58%;       /* Dourado vibrante */
+    --accent-foreground: 263 70% 15%;
+
+    /* Cyan para transições */
+    --cyan: 188 94% 43%;        /* Azul ciano */
+    --cyan-light: 188 86% 53%;
+
+    /* Lilás intermediário */
+    --lilac: 270 70% 75%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 263 40% 30%;
+    --input: 263 40% 25%;
+    --ring: 45 93% 58%;         /* Ring dourado */
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Gradientes cósmicos */
+    --gradient-cosmic: linear-gradient(135deg, hsl(263, 70%, 25%), hsl(270, 60%, 35%), hsl(188, 94%, 43%));
+    --gradient-hero: linear-gradient(180deg, hsl(263, 70%, 15%), hsl(263, 60%, 25%));
+    --gradient-golden: linear-gradient(135deg, hsl(45, 93%, 58%), hsl(45, 95%, 70%));
+    
+    /* Sombras místicas */
+    --shadow-glow: 0 0 40px hsl(263 70% 50% / 0.4);
+    --shadow-golden: 0 0 30px hsl(45 93% 58% / 0.5);
+    
+    /* Transições suaves */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -101,5 +71,125 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Títulos místicos */
+  h1, h2, h3 {
+    font-family: 'Cinzel Decorative', serif;
+    letter-spacing: 0.02em;
+  }
+
+  /* Scroll suave */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Gradient backgrounds animados */
+  .bg-cosmic {
+    background: linear-gradient(135deg, hsl(263, 70%, 25%), hsl(270, 60%, 35%), hsl(188, 94%, 43%));
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(180deg, hsl(263, 70%, 15%) 0%, hsl(263, 60%, 25%) 100%);
+  }
+
+  /* Efeito de brilho dourado nos botões */
+  .golden-glow {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px hsl(45 93% 58% / 0.5);
+  }
+
+  .golden-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(45, 95%, 70%), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .golden-glow:hover::before {
+    left: 100%;
+  }
+
+  /* Animação de pulso dourado */
+  @keyframes pulse-golden {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(45 93% 58% / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(45 93% 58% / 0.8);
+    }
+  }
+
+  .animate-pulse-golden {
+    animation: pulse-golden 2s ease-in-out infinite;
+  }
+
+  /* Gradient shift animado */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Cards translúcidos com luz roxa */
+  .card-mystic {
+    background: hsl(263 60% 20% / 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(270 60% 70% / 0.2);
+    box-shadow: 0 8px 32px hsl(263 70% 50% / 0.2);
+    transition: var(--transition-smooth);
+  }
+
+  .card-mystic:hover {
+    border-color: hsl(270 60% 70% / 0.4);
+    box-shadow: 0 12px 40px hsl(263 70% 50% / 0.4);
+    transform: translateY(-4px);
+  }
+
+  /* Efeito de paralaxe */
+  .parallax-clouds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  /* Scroll reveal animation */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
